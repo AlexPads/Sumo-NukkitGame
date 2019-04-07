@@ -1,0 +1,8 @@
+name: SumoPvP
+main: nl.sumo.jose.main.Sumo
+api: 1.0.7
+version: 1.0
+author: Josewqoqgame
+commands:
+ sumo:
+  description: "Sumo command"
