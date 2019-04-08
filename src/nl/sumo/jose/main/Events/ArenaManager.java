@@ -145,8 +145,6 @@ for(String w : files){
 player.teleport(sumo.getServer().getDefaultLevel().getSafeSpawn());
 player.setGamemode(2);
 player.getInventory().clearAll();
-player.getInventory().setItem(1, new Item(345,0,1).setCustomName("§cGadgets"));
-player.getInventory().setItem(7, new Item(339,0,1).setCustomName("§aINFO"));
 Boss.removeBossBar(player, arena.getInt("id"));
 player.setImmobile(false);
 		}
