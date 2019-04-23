@@ -37,8 +37,6 @@ if(arena.getInt("status") == 0){
 player.teleport(sumo.getServer().getDefaultLevel().getSafeSpawn());
 player.setGamemode(2);
 player.getInventory().clearAll();
-player.getInventory().setItem(1, new Item(345,0,1).setCustomName("§cGadgets"));
-player.getInventory().setItem(7, new Item(339,0,1).setCustomName("§aINFO"));
 player.setImmobile(false);
 Boss.removeBossBar(player, arena.getInt("id"));
 player.sendMessage(Arena.title+"Has dejado el combate");
@@ -61,8 +59,6 @@ if(text.startsWith("/hub")){
 	player.teleport(sumo.getServer().getDefaultLevel().getSafeSpawn());
 	player.setGamemode(2);
 	player.getInventory().clearAll();
-	player.getInventory().setItem(1, new Item(345,0,1).setCustomName("§cGadgets"));
-	player.getInventory().setItem(7, new Item(339,0,1).setCustomName("§aINFO"));
 	player.setImmobile(false);
 	Boss.removeBossBar(player, arena.getInt("id"));
 	player.sendMessage(Arena.title+"Has dejado el combate");

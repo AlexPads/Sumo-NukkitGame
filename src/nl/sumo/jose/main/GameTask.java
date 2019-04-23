@@ -44,7 +44,7 @@ for(String configs : games){
 			arena.set("start", time);
 			arena.save();
 			for(Player p : levelArena.getPlayers().values()){
-				p.sendTitle("ยงa"+time);
+				p.sendTitle("งa"+time);
 				p.getInventory().clearAll();
 				sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p.getX(),p.getY(),p.getZ()), Sound.RANDOM_LEVELUP);
 			}
@@ -75,7 +75,7 @@ sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p
 		//finsles
 		if(time == 60*3-1){
 			for(Player p : levelArena.getPlayers().values()){
-				p.sendMessage(Arena.title+" ยง6El duelo a comenzado tira a tu oponente");
+				p.sendMessage(Arena.title+" ง6El duelo a comenzado tira a tu oponente");
 				p.sendTitle("");
 			}
 		}
@@ -97,7 +97,7 @@ sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p
 				
 			}
 	for(Player p : sumo.getServer().getOnlinePlayers().values()){
-		p.sendMessage(Arena.title+"ยงa"+name+" ยง7Ha ganado en ยง8: ยงd"+arena.getString("nameArena"));		
+		p.sendMessage(Arena.title+"งa"+name+" ง7Ha ganado en ง8: งd"+arena.getString("nameArena"));		
 			}
 	arena.set("status", 0);
 	arena.set("time", 60*3);
@@ -118,7 +118,7 @@ sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p
 				
 			}
 	for(Player p : sumo.getServer().getOnlinePlayers().values()){
-		p.sendMessage(Arena.title+"ยง7No hubo ganadores  en ยง8: ยงd"+arena.getString("nameArena"));		
+		p.sendMessage(Arena.title+"ง7No hubo ganadores  en ง8: งd"+arena.getString("nameArena"));		
 			}
 			
 			arena.set("status", 0);
@@ -139,7 +139,7 @@ sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p
 				
 			}
 	for(Player p : sumo.getServer().getOnlinePlayers().values()){
-		p.sendMessage(Arena.title+"ยง7No hubo ganadores  en ยง8: ยงd"+arena.getString("nameArena"));		
+		p.sendMessage(Arena.title+"ง7No hubo ganadores  en ง8: งd"+arena.getString("nameArena"));		
 			}
 			
 			arena.set("status", 0);
@@ -170,6 +170,6 @@ sumo.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p
 		    int hor=num/3600;
 	        int min=(num-(3600*hor))/60;
 	        int seg=num-((hor*3600)+(min*60));
-     return "ยงe"+min+"ยงa:ยงe"+seg;
+     return "งe"+min+"งa:งe"+seg;
 	}
 }

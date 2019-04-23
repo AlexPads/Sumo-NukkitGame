@@ -31,7 +31,7 @@ public class Sumo extends PluginBase{
 	public String namefinal = "";
 	public int id = 0;
 	public int players = 0;
-	
+	public CubosCore core;
 	@Override
 public void onEnable(){
 		 Entity.registerEntity(SumoEntity.class.getSimpleName(), SumoEntity.class);
@@ -259,9 +259,9 @@ public boolean onCommand(CommandSender sender, Command command, String label, St
  */
 
 public String getNameNPC(){
-	String prefix = "Â§lÂ§bSumo";
-	String br = "\nÂ§r";
-return prefix+br+"Â§a"+players+" Â§eJugando";
+	String prefix = "§l§bSumo";
+	String br = "\n§r";
+return prefix+br+"§a"+players+" §eJugando";
 }
 public void setPlayersArena(){
 	int total;
@@ -309,7 +309,7 @@ public void updateSystem(){
 
 public void joinGame(Player player , String game){
 
-	String name = "Â§7"+player.getName();
+	String name = "§7"+player.getName();
 	Config arena = new Config(this.getDataFolder()+"/Arenas/"+game+".yml",Config.YAML);	
 	if(arena.getInt("status") == 0){
 	int x1 = arena.getInt("game1x");int y1 = arena.getInt("game1y");int z1 = arena.getInt("game1z");
@@ -321,9 +321,9 @@ public void joinGame(Player player , String game){
 	player.teleport(new Vector3(x1,y1,z1));
 	player.setImmobile(true);
 	player.getInventory().clearAll();
-	player.getInventory().setItem(8, Item.get(152,0,1).setCustomName("Â§lÂ§bSalir"));	
+	player.getInventory().setItem(8, Item.get(152,0,1).setCustomName("§l§bSalir"));	
 	player.setGamemode(2);
-	player.setNameTag("Â§lÂ§6"+player.getName());
+	player.setNameTag("§l§6"+player.getName());
 	Boss.sendBossBarToPlayer(player, arena.getInt("id"), "Sumo");
 	Boss.setVida(player, arena.getInt("id"), 100);
 	Boss.removeBossBar(player, 3984549);
@@ -337,9 +337,9 @@ public void joinGame(Player player , String game){
 			player.teleport(new Vector3(x2,y2,z2));
 			player.setImmobile(true);
 			player.getInventory().clearAll();
-			player.getInventory().setItem(8, Item.get(152,0,1).setCustomName("Â§lÂ§bSalir"));	
+			player.getInventory().setItem(8, Item.get(152,0,1).setCustomName("§l§bSalir"));	
 			player.setGamemode(2);
-			player.setNameTag("Â§lÂ§6"+player.getName());
+			player.setNameTag("§l§6"+player.getName());
 			Boss.sendBossBarToPlayer(player, arena.getInt("id"), "Sumo");
 			Boss.setVida(player, arena.getInt("id"), 100);
 			Boss.removeBossBar(player, 3984549);
@@ -350,7 +350,7 @@ public void joinGame(Player player , String game){
 
 for(Player p : this.getServer().getLevelByName(arena.getString("level")).getPlayers().values()){
 	this.getServer().getLevelByName(arena.getString("level")).addSound(new Vector3(p.getX(),p.getY(),p.getZ()), Sound.MOB_ENDERMEN_PORTAL);
-	p.sendMessage(Arena.title+name+" Â§ase ha unido Â§e(Â§b"+this.countPlayersGM(game)+"Â§e/Â§b2Â§e)");
+	p.sendMessage(Arena.title+name+" §ase ha unido §e(§b"+this.countPlayersGM(game)+"§e/§b2§e)");
 }
 	}
 }
@@ -366,13 +366,13 @@ public void updateTextBoss(Player player ,String name){
 	int status = config.getInt("status");
 	int players = this.getServer().getLevelByName(config.getString("level")).getPlayers().size();
 	if(players < 2 && status == 0){
-	text = "\n\nÂ§6Buscando oponenteÂ§b....";	
+	text = "\n\n§6Buscando oponente§b....";	
 	}
 	if(players >= 2 && status == 1 && config.getInt("start") > 0){
 		text = "\n\n";
 	}
 	if(players >=2 && status ==1 && config.getInt("start") == 0){
-		text = "\n\n"+"Â§bEl duelo temrina en Â§7: Â§e"+getReloj(config.getInt("time"))+" Â§bsegundos";
+		text = "\n\n"+"§bEl duelo temrina en §7: §e"+getReloj(config.getInt("time"))+" §bsegundos";
 	}
 	Boss.sendTitle(player, id, text);
 }
@@ -380,7 +380,7 @@ public String getReloj(int num){
     int hor=num/3600;
     int min=(num-(3600*hor))/60;
     int seg=num-((hor*3600)+(min*60));
-return "Â§e"+min+"Â§a:Â§e"+seg;
+return "§e"+min+"§a:§e"+seg;
 }
 public void setFood(Player player,int food){
 	UpdateAttributesPacket upk = new UpdateAttributesPacket();
